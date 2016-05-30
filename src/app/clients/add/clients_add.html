@@ -1,0 +1,146 @@
+<acme-navbar creation-date="main.creationDate"></acme-navbar>
+<div class="container">
+    <h2 class='text-center'><i class="fa fa-plus-circle fa-2x"></i> Agregar Cliente</h2>
+    <div class="well">
+        <form ng-submit="clientsadd.send()" name="client_form" class="form-horizontal" autocomplete="off" role="form">
+
+
+            <fieldset>
+                <legend>Generales</legend>
+
+                <div class="row text-center">
+                    <div class="col-md-12 checkbox">
+                        <div class="col-md-3 col-md-offset-3">
+                            <label class="btn btn-primary btn-sm btn-block" ng-model="checkModel.radioModel" btn-radio="'norfc'" uncheckable><i class="fa fa-user"></i> Cliente sin RFC</label>
+                        </div>
+                        <div class="col-md-3 col-md-offset-1">
+                            <label class="btn btn-primary btn-sm btn-block" ng-model="checkModel.radioModel" btn-radio="'foreign'" uncheckable><i class="fa fa-user"></i> Cliente extranjero</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class='form-group'>
+                    <label for="client_tax_id" class='col-sm-2 control-label'>RFC <span class="text-danger">*</span></label>
+                    <div class='col-sm-4'>
+                        <input class="form-control" type="text" id="client_tax_id" ng-model="client.post.client_tax_id" validate-client-rfc ng-readonly="client.rfcSAT" required>
+                        <div class="help-block"></div>
+                    </div>
+                    <label class="col-sm-1 control-label" for="client_etiqueta">Etiqueta</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="client_etiqueta" ng-model="client.post.client_tax_id">
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label for="client_name" class='col-sm-2 control-label'>Nombre <span class="text-danger">*</span></label>
+                    <div class='col-sm-10'>
+                        <input class="form-control" type="text" id="client_name" ng-model="client.post.client_name" required>
+                    </div>
+                </div>
+                <legend>Direccion</legend>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_address">Calle <span class="text-danger">*</span></label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" id="client_address" ng-model="client.post.address" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="noExterior">Num Ext <span class="text-danger">*</span></label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="noExterior" ng-model="client..post.noExterior" required>
+                    </div>
+                    <label class="col-sm-2 control-label" for="noInterior">Num Int</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="noInterior" ng-model="client.post.noInterior">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_address_2">Colonia <span class="text-danger">*</span></label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="client_address_2" ng-model="client.post.colonia" required>
+                    </div>
+                    <label class="col-sm-2 control-label" for="client_zip">Codigo Postal <span class="text-danger">*</span></label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="client_zip" ng-model="client.post.zip" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_city">Ciudad <span class="text-danger">*</span></label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="client_city" ng-model="client.post.city" required>
+                    </div>
+                    <label class="col-sm-2 control-label" for="client_state">Estado <span class="text-danger">*</span></label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="client_state" ng-model="client.post.state" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_country">Pais <span class="text-danger">*</span></label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="client_country" ng-model="client.post.country" required>
+                    </div>
+                </div>
+                <legend>Datos Contacto</legend>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_email_address">Correo</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_email_address" placeholder="@" ng-model="client.post.">
+                    </div>
+                    <label class="col-sm-2 control-label" for="client_phone_number">Telefono</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_phone_number" ng-model="client.post.">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_mobile_number">Tel Celular</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_mobile_number" ng-model="client.post.">
+                    </div>
+                    <label class="col-sm-2 control-label" for="client_fax_number">Fax</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_fax_number" ng-model="client.post.">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_web_address">Direccion web</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_web_address" placeholder="www" ng-model="client.post.">
+                    </div>
+                </div>
+
+                <legend>Miscelaneos</legend>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_banco">Banco</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_banco">
+                    </div>
+                    <label class="col-sm-2 control-label" for="client_cuenta_bancaria">Cuenta Bancaria</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_cuenta_bancaria">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="client_iva_ret">% Retencion IVA</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="client_iva_ret">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-11">
+                        <div class="pull-right">
+                            <a href="<?php echo site_url('clients');?>" class="btn btn-default">Cancelar</a>
+                            <button type="submit" class="btn btn-primary btn-lg"  ng-disabled="client_form.$invalid || client_form.$pending || client.disabled" >Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <button type="submit" class="btn btn-default" ng-disabled="client_form.$invalid || client_form.$pending || clientsadd.disabled">Submit</button>
+        </form>
+    </div>
+</div>
